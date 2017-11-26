@@ -1,0 +1,32 @@
+config defaults
+	option syn_flood '1'
+	option input 'ACCEPT'
+	option output 'ACCEPT'
+	option forward 'REJECT'
+
+config zone 'wan'
+	option name 'wan'
+	option input 'REJECT'
+	option output 'ACCEPT'
+	option forward 'REJECT'
+	option masq '1'
+	option mtu_fix '1'
+	list network 'wan'
+	list network 'wan6'
+	#list network 'wan6'
+	list network 'cif1'
+	list network 'wan10'
+	list network 'wan11'
+	list network 'wan12'
+	list network 'cif2'
+	list network 'tun0'
+	list network 'xtun0'
+	list network 'wan13'
+	list network 'wan14'
+	list network 'wan18'
+	list network 'if0'
+
+config forwarding
+	option src 'lan'
+	option dest 'wan'
+
